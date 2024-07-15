@@ -1,0 +1,39 @@
+<mat-card class="policy-form-card">
+  <h4>Policy Form</h4>
+  <form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+    <input formControlName="policyId" type="hidden" />
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Policy Number</mat-label>
+      <input matInput id="policyNumber" formControlName="policyNumber" />
+      <mat-error *ngIf="policyForm.controls['policyNumber'].hasError('required')">
+        Policy Number is required.
+      </mat-error>
+    </mat-form-field>
+
+    <div formGroupName="policyHolder">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput id="name" formControlName="name" />
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" id="age" formControlName="age" />
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Gender</mat-label>
+        <mat-select id="gender" formControlName="gender">
+          <mat-option value="">Select Gender</mat-option>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="policyForm.invalid">Submit</button>
+    </div>
+  </form>
+</mat-card>

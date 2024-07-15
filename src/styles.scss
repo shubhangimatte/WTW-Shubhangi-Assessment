@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+    background-color: #7f35b2;
+    padding: 10px 0;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+  
+      .navbar-logo img {
+        height: 40px;
+      }
+  
+      .navbar-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        .navbar-item {
+          margin-left: 20px;
+  
+          .navbar-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            transition: color 0.3s ease;
+  
+            &:hover,
+            &.active {
+              color: #00bfff;
+            }
+          }
+        }
+      }
+  
+      .navbar-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+  
+        .navbar-toggle-bar {
+          background-color: #fff;
+          height: 3px;
+          width: 25px;
+          margin: 3px 0;
+          transition: 0.3s ease;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+        .navbar-item {
+          margin: 0;
+          padding: 10px 20px;
+  
+          .navbar-link {
+            font-size: 18px;
+          }
+        }
+      }
+  
+      .navbar-menu.active {
+        display: flex;
+      }
+  
+      .navbar-toggle {
+        display: flex;
+      }
+    }
+  }
+  

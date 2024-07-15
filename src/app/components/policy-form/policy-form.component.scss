@@ -1,0 +1,23 @@
+.policy-form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 65px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-actions {
+  margin-top: 16px;
+  text-align: right;
+}
+
+button[mat-raised-button] {
+  color: #fff;
+  background-color: #3f51b5;
+  &:hover {
+    background-color: #303f9f;
+  }
+}
